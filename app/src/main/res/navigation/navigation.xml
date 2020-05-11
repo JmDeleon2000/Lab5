@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation">
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    app:startDestination="@id/homeScreen">
 
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="com.example.lab4.HomeScreen"
+        android:label="HomeScreen" >
+        <action
+            android:id="@+id/action_homeScreen_to_signUp"
+            app:destination="@id/signUp" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.example.lab4.SignUp"
+        android:label="SignUp" >
+        <action
+            android:id="@+id/action_signUp_to_results"
+            app:destination="@id/results" />
+    </fragment>
+    <fragment
+        android:id="@+id/results"
+        android:name="com.example.lab4.Results"
+        android:label="Results" >
+        <action
+            android:id="@+id/action_results_to_homeScreen"
+            app:popUpTo="@id/homeScreen" />
+    </fragment>
 </navigation>
